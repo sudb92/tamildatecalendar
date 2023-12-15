@@ -20,7 +20,7 @@ else
     wget -q -O /tmp/today.jpg https://www.tamildailycalendar.com/$(date +%Y)/$(date +%d%m%Y).jpg;
 fi
 
-#personal favorite, borderless feh
+#personal favorite, borderless feh that quits when you press 'q'. Install using 'sudo apt install feh' in Ubuntu/Debian
 #feh -x /tmp/today.jpg
 
 #generic imagefile opener
