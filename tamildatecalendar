@@ -12,16 +12,16 @@
 #
 # You should have received a copy of the GNU General Public License along with
 # this program.  If not, see <http://www.gnu.org/licenses/>.
-if [[ "$(stat -c '%z' /tmp/today.jpg 2> /dev/null | cut -d' ' -f1)" -eq "$(date +%Y-%m-%d)" ]]; then 
+if [[ "$(stat -c '%z' /tmp/today.jpg 2> /dev/null | cut -d' ' -f1)" -eq "$(date +%Y-%m-%d)" ]]; then
     #echo "Not downloading anew"
     echo ""
 else
     #download quietly (-q) to /tmp/today.jpg. -O overwrites, just in case
-    wget -q -O /tmp/today.jpg https://www.tamildailycalendar.com/$(date +%Y)/$(date +%d%m%Y).jpg;
+    wget -q -O /tmp/today.jpg https://www.tamildailycalendar.com/$(date +%Y)/$(date +%-d%m%Y).jpg;
 fi
 
-#personal favorite, borderless feh that quits when you press 'q'. Install using 'sudo apt install feh' in Ubuntu/Debian
-#feh -x /tmp/today.jpg
+#personal favorite, borderless feh
+feh -x -F /tmp/today.jpg
 
 #generic imagefile opener
-xdg-open /tmp/today.jpg &
+#xdg-open /tmp/today.jpg &
